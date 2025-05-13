@@ -1,24 +1,9 @@
 <script setup lang="ts">
-  const results = ref({
-    answers: [
-      {
-        question: 'Jakie jest największe miasto w Polsce?',
-        userAnswer: 'Warszawa',
-        correctAnswer: 'Warszawa',
-        isCorrect: true,
-      },
-      {
-        question: 'Jakie jest największe miasto w Polsce2?',
-        userAnswer: 'Kraków',
-        correctAnswer: 'Warszawa',
-        isCorrect: false,
-      },
-    ],
-  })
+  import { useQuizStore } from '@/stores/quiz';
 
-  const resetQuiz = () => {
-    console.log('Reset quiz')
-  }
+  const quizStore = useQuizStore();
+  const { results, shuffledQuestions } = storeToRefs(quizStore);
+  const { resetQuiz } = quizStore;
 </script>
 
 <template>
@@ -29,7 +14,8 @@
 
     <v-card-text>
       <div class="text-h5 text-center mb-6">
-        Poprawne odpowiedzi: /correct/ z /total/
+        Poprawne odpowiedzi: {{ results.correct }} z {{ shuffledQuestions.length }}
+        ({{ Math.round((results.correct / shuffledQuestions.length) * 100) }}%)
       </div>
 
       <v-expansion-panels>

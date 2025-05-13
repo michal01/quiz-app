@@ -1,25 +1,25 @@
 {
   "quiz": {
     "id": 1,
-    "title": "Sample Quiz",
+    "title": "Wspaniały Quiz",
     "questions": [
       {
         "id": 1,
-        "question": "What is the capital of France?",
+        "question": "Jaka jest stolica Francji?",
         "options": [
           { "id": 1, "text": "Berlin" },
-          { "id": 2, "text": "Madrid" },
-          { "id": 3, "text": "Paris" },
-          { "id": 4, "text": "Rome" }
+          { "id": 2, "text": "Madryt" },
+          { "id": 3, "text": "Paryż" },
+          { "id": 4, "text": "Rzym" }
         ],
         "correctOptionId": 3
       },
       {
         "id": 2,
-        "question": "What is the largest planet in our solar system?",
+        "question": "Jaka jest największa planeta w naszym Układzie Słonecznym?",
         "options": [
-          { "id": 1, "text": "Earth" },
-          { "id": 2, "text": "Jupiter" },
+          { "id": 1, "text": "Ziemia" },
+          { "id": 2, "text": "Jowisz" },
           { "id": 3, "text": "Mars" },
           { "id": 4, "text": "Saturn" }
         ],
@@ -27,7 +27,7 @@
       },
       {
         "id": 3,
-        "question": "What is the chemical symbol for gold?",
+        "question": "Jaki jest chemiczny symbol złota?",
         "options": [
           { "id": 1, "text": "Ag" },
           { "id": 2, "text": "Au" },
@@ -38,29 +38,29 @@
       },
       {
         "id": 4,
-        "question": "What is the speed of light?",
+        "question": "Jaka jest prędkość światła?",
         "options": [
-          { "id": 1, "text": "300,000 km/s" },
-          { "id": 2, "text": "150,000 km/s" },
-          { "id": 3, "text": "450,000 km/s" },
-          { "id": 4, "text": "600,000 km/s" }
+          { "id": 1, "text": "300 000 km/s" },
+          { "id": 2, "text": "150 000 km/s" },
+          { "id": 3, "text": "450 000 km/s" },
+          { "id": 4, "text": "600 000 km/s" }
         ],
         "correctOptionId": 1
       },
       {
         "id": 5,
-        "question": "What is the largest mammal in the world?",
+        "question": "Jakie jest największe ssak na świecie?",
         "options": [
-          { "id": 1, "text": "Elephant" },
-          { "id": 2, "text": "Blue Whale" },
-          { "id": 3, "text": "Giraffe" },
-          { "id": 4, "text": "Great White Shark" }
+          { "id": 1, "text": "Słoń" },
+          { "id": 2, "text": "Płetwal błękitny" },
+          { "id": 3, "text": "Żyrafa" },
+          { "id": 4, "text": "Rekin biały" }
         ],
         "correctOptionId": 2
       },
       {
         "id": 6,
-        "question": "What is the boiling point of water?",
+        "question": "Jaka jest temperatura wrzenia wody?",
         "options": [
           { "id": 1, "text": "0°C" },
           { "id": 2, "text": "50°C" },
@@ -71,7 +71,7 @@
       },
       {
         "id": 7,
-        "question": "What is the smallest prime number?",
+        "question": "Jaka jest najmniejsza liczba pierwsza?",
         "options": [
           { "id": 1, "text": "0" },
           { "id": 2, "text": "1" },
@@ -82,34 +82,34 @@
       },
       {
         "id": 8,
-        "question": "What is the largest ocean on Earth?",
+        "question": "Jaki jest największy ocean na Ziemi?",
         "options": [
-          { "id": 1, "text": "Atlantic Ocean" },
-          { "id": 2, "text": "Indian Ocean" },
-          { "id": 3, "text": "Arctic Ocean" },
-          { "id": 4, "text": "Pacific Ocean" }
+          { "id": 1, "text": "Ocean Atlantycki" },
+          { "id": 2, "text": "Ocean Indyjski" },
+          { "id": 3, "text": "Ocean Arktyczny" },
+          { "id": 4, "text": "Ocean Spokojny" }
         ],
         "correctOptionId": 4
       },
       {
         "id": 9,
-        "question": "What is the hardest natural substance on Earth?",
+        "question": "Jaka jest najtwardsza naturalna substancja na Ziemi?",
         "options": [
-          { "id": 1, "text": "Diamond" },
-          { "id": 2, "text": "Gold" },
-          { "id": 3, "text": "Iron" },
-          { "id": 4, "text": "Graphite" }
+          { "id": 1, "text": "Diament" },
+          { "id": 2, "text": "Złoto" },
+          { "id": 3, "text": "Żelazo" },
+          { "id": 4, "text": "Grafit" }
         ],
         "correctOptionId": 1
       },
       {
         "id": 10,
-        "question": "What is the main ingredient in guacamole?",
+        "question": "Jaki jest główny składnik guacamole?",
         "options": [
-          { "id": 1, "text": "Tomato" },
-          { "id": 2, "text": "Avocado" },
-          { "id": 3, "text": "Onion" },
-          { "id": 4, "text": "Pepper" }
+          { "id": 1, "text": "Pomidor" },
+          { "id": 2, "text": "Awokado" },
+          { "id": 3, "text": "Cebula" },
+          { "id": 4, "text": "Papryka" }
         ],
         "correctOptionId": 2
       }

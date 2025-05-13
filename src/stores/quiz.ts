@@ -10,6 +10,13 @@ interface QuizQuestion {
   correctOptionId: number
 }
 
+interface QuizAnswer {
+  question: string
+  userAnswer: string
+  correctAnswer: string
+  isCorrect: boolean
+}
+
 interface Quiz {
   id: number
   title: string
@@ -22,17 +29,45 @@ export const useQuizStore = defineStore('quiz', () => {
   const userAnswers = ref(new Map<number, number>())
   const quizFinished = ref(false)
   const shuffledQuestions = ref<QuizQuestion[]>([])
+  const questionLimit = ref<number | null>(9)
 
   const quizTitle = computed(() => quiz.value?.title || '')
 
+  const results = computed(() => {
+    const results = {
+      correct: 0,
+      answers: [] as QuizAnswer[],
+    }
+    results.answers = shuffledQuestions.value.map(question => {
+      const userAnswerId = userAnswers.value.get(question.id)
+      const userAnswer = question.options.find(opt => opt.id === userAnswerId)?.text || 'Brak odpowiedzi'
+      const correctAnswer = question.options.find(opt => opt.id === question.correctOptionId)?.text || ''
+      const isCorrect = userAnswerId === question.correctOptionId
+      if (isCorrect) results.correct++
+      return {
+        question: question.question,
+        userAnswer,
+        correctAnswer,
+        isCorrect,
+      }
+    })
+    return results
+  })
+
   const shuffleQuestions = () => {
     if (!quiz.value) return
-    shuffledQuestions.value = [...quiz.value.questions]
+    let questions = quiz.value.questions
       .map(question => ({
         ...question,
         options: [...question.options].sort(() => Math.random() - 0.5),
       }))
       .sort(() => Math.random() - 0.5)
+
+    if (questionLimit.value !== null && questionLimit.value > 0) {
+      questions = questions.slice(0, questionLimit.value)
+    }
+
+    shuffledQuestions.value = questions
   }
 
   const fetchQuiz = async () => {
@@ -45,12 +80,21 @@ export const useQuizStore = defineStore('quiz', () => {
     }
   }
 
+  const resetQuiz = () => {
+    currentQuestionIndex.value = 0
+    userAnswers.value.clear()
+    quizFinished.value = false
+    shuffleQuestions()
+  }
+
   return {
     quizTitle,
     shuffledQuestions,
     quizFinished,
     currentQuestionIndex,
     userAnswers,
+    results,
     fetchQuiz,
+    resetQuiz,
   }
 })
