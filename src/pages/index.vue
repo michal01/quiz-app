@@ -2,11 +2,10 @@
   import { useQuizStore } from '@/stores/quiz'
 
   const quizStarted = ref(false);
-  const quizFinished = ref(false);
   const loading = ref(false);
 
   const quizStore = useQuizStore();
-  const { quizTitle, shuffledQuestions } = storeToRefs(quizStore);
+  const { quizTitle, shuffledQuestions, quizFinished } = storeToRefs(quizStore);
   const { fetchQuiz } = quizStore;
 
   const startQuiz = () => {

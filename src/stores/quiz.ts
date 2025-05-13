@@ -18,6 +18,9 @@ interface Quiz {
 
 export const useQuizStore = defineStore('quiz', () => {
   const quiz = ref<Quiz | null>(null)
+  const currentQuestionIndex = ref(0)
+  const userAnswers = ref(new Map<number, number>())
+  const quizFinished = ref(false)
   const shuffledQuestions = ref<QuizQuestion[]>([])
 
   const quizTitle = computed(() => quiz.value?.title || '')
@@ -45,6 +48,9 @@ export const useQuizStore = defineStore('quiz', () => {
   return {
     quizTitle,
     shuffledQuestions,
+    quizFinished,
+    currentQuestionIndex,
+    userAnswers,
     fetchQuiz,
   }
 })
